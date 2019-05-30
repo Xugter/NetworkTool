@@ -7,7 +7,7 @@ import android.net.NetworkInfo;
 public class NetworkStateTool {
 
     public static boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) NetworkTool.application.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) NetworkTool.getDefault().getApplication().getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager == null) return false;
         NetworkInfo[] info = connectivityManager.getAllNetworkInfo();
         if (info != null) {
@@ -21,7 +21,7 @@ public class NetworkStateTool {
     }
 
     public static NetType getNetType() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) NetworkTool.application.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) NetworkTool.getDefault().getApplication().getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager == null) return NetType.NONE;
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo == null) return NetType.NONE;

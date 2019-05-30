@@ -6,6 +6,6 @@ import com.xugter.networktoollib.NetworkTool
 class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        NetworkTool.init(this)
+        NetworkTool.getDefault().init(this)
     }
 }
