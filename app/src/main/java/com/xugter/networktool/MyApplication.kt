@@ -7,5 +7,6 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         NetworkTool.getDefault().init(this)
+        NetworkTool.getDefault().setDebug(true)
     }
 }

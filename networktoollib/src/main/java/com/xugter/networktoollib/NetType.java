@@ -1,8 +1,8 @@
 package com.xugter.networktoollib;
 
 public enum NetType {
+    AUTO,
     WIFI,
-    GPRS,
     CMNET,
     CMWAP,
     NONE
