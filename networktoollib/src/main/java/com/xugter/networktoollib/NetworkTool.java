@@ -99,7 +99,7 @@ public class NetworkTool {
         return application;
     }
 
-    ConnectivityManager getConnectivityManager () {
+    ConnectivityManager getConnectivityManager() {
         return connectivityManager;
     }
 
@@ -121,16 +121,19 @@ public class NetworkTool {
         if (methodManagerList != null) {
             for (MethodManager methodManager : methodManagerList) {
                 switch (methodManager.getTargetNetType()) {
-                    case AUTO:
-                        methodManager.invoke(keyObject, netType);
-                        break;
-                    case NONE:
-                        break;
                     case WIFI:
+                        if (netType == NetType.WIFI || netType == NetType.NONE) {
+                            methodManager.invoke(keyObject, netType);
+                        }
                         break;
-                    case CMNET:
+                    case MOBILE:
+                        if (netType == NetType.MOBILE || netType == NetType.NONE) {
+                            methodManager.invoke(keyObject, netType);
+                        }
                         break;
-                    case CMWAP:
+                    case ALL:
+                    case NONE:
+                        methodManager.invoke(keyObject, netType);
                         break;
                 }
             }

@@ -8,5 +8,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Network {
-    NetType targetNetType() default NetType.AUTO;
+    NetType targetNetType() default NetType.ALL;
 }

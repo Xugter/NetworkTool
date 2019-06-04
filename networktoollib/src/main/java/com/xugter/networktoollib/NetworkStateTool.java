@@ -35,11 +35,7 @@ class NetworkStateTool {
         int type = networkInfo.getType();
         Logger.d(NetworkTool.TAG, "====networkInfo type=" + type);
         if (type == ConnectivityManager.TYPE_MOBILE) {
-            if (networkInfo.getExtraInfo().toLowerCase().equals("cmnet")) {
-                return NetType.CMNET;
-            } else {
-                return NetType.CMWAP;
-            }
+            return NetType.MOBILE;
         } else if (type == ConnectivityManager.TYPE_WIFI) {
             return NetType.WIFI;
         }

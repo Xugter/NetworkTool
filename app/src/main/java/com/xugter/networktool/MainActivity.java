@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         NetworkTool.getDefault().register(this);
     }
 
-    @Network(targetNetType = NetType.AUTO)
+    @Network(targetNetType = NetType.ALL)
     public void test(NetType netType) {
         Log.i("bbbb", "===============" + netType);
     }
